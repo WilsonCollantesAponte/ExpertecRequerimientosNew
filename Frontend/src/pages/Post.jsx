@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 // import "../assets/css/componentes/card.css";
 import m from "../assets/css/Post.module.css";
 import { useEffect, useState } from "react";
@@ -6,6 +6,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 
 const Post = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [detail, setDetail] = useState({});
   const [detailOther, setDetailOther] = useState({
@@ -14,6 +15,7 @@ const Post = () => {
     nameD: "",
     apellD: "",
   });
+  const [securityDelete, setSecurityDelete] = useState(true);
 
   const { administrador, desarrollador, cliente } = useSelector(
     ({ actualUser }) => actualUser
@@ -42,6 +44,29 @@ const Post = () => {
       }
     });
   }, [id]);
+
+  function handleSecurityDelete() {
+    setSecurityDelete(!securityDelete);
+  }
+
+  function handleDelete() {
+    // const { id, email } = detail;
+
+    // if (!id || !email)
+    //   return alert(
+    //     `No se puede eliminar por que falta el 'email' o el 'identificador' del usuario`
+    //   );
+
+    // console.log(id, email);
+    axios
+      .delete(`http://localhost:3001/requirement?id=${id}`)
+      .then(({ data }) => {
+        const { title } = data.willBeDeleted;
+        alert(`${title} ha sido borrado`);
+        navigate("/");
+      });
+    // alert(`Eliminado`);
+  }
 
   return (
     <main className="container flex flex--center">
@@ -112,6 +137,32 @@ const Post = () => {
               </p>
             </div>
           )}
+
+          {detail.id ? (
+            <p className={m.pDelete}>
+              {securityDelete ? (
+                <button onClick={handleSecurityDelete} className={m.delete}>
+                  Eliminar requerimiento
+                </button>
+              ) : (
+                <div className={m.secondDelete}>
+                  <p>Esta seguro? No se podra recuperar</p>
+
+                  <span>
+                    <button onClick={handleDelete} className={m.confirmDelete}>
+                      Eliminar
+                    </button>
+                    <button
+                      onClick={handleSecurityDelete}
+                      className={m.cancelDelete}
+                    >
+                      Cancelar
+                    </button>
+                  </span>
+                </div>
+              )}
+            </p>
+          ) : null}
         </div>
       </div>
     </main>

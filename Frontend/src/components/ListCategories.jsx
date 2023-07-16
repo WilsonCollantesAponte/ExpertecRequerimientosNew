@@ -5,12 +5,6 @@ import "../assets/css/blog.css";
 import data from "../data";
 
 const ListCategories = () => {
-  // const [categories, setCategories] = useState([]);
-
-  // useEffect(() => {
-  //     buscar(`/categorias`, setCategories);
-  // }, []);
-
   const { categorias } = data;
 
   return (

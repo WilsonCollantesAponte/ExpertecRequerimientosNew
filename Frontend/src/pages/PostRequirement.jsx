@@ -119,6 +119,9 @@ export default function PostRequirement() {
 
                 alert("Listo");
               });
+          })
+          .cath(() => {
+            console.log("");
           });
       });
   }

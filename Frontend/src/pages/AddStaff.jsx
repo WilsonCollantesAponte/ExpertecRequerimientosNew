@@ -52,6 +52,15 @@ export default function AddStaff() {
             .post("http://localhost:3001/newUser", toSend)
             .then(({ data }) => {
               alert("Nuevo registro guardado");
+
+              // setData({
+              //   nombres: "",
+              //   apellidos: "",
+              //   email: "",
+              //   telefono: "",
+              //   empresa: "",
+              //   password: "",
+              // });
             });
         } else {
           alert("Este usuaio ya existe");

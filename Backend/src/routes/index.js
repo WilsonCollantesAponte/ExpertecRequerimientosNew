@@ -306,4 +306,22 @@ router.post("/userRequirement", async (req, res) => {
   }
 });
 
+router.delete("/requirement", async (req, res) => {
+  try {
+    const { id } = req.query;
+
+    const willBeDeleted = await Requirement.findByPk(id);
+
+    await Requirement.destroy({
+      where: {
+        id,
+      },
+    });
+
+    res.status(200).json({ id, message: "Deleted OK", willBeDeleted });
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+});
+
 module.exports = router;
