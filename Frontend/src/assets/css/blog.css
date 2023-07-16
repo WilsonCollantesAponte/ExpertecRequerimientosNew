@@ -1,0 +1,23 @@
+.category-list {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+}
+
+.category-list__category {
+    font-weight: var(--font-size-categories);
+    background-color: var(--contrast-light-color);
+    border-radius: 3rem;
+    padding: 1rem;
+}
+
+.category-list__category--Alta {
+    color: var(--contrast-light-color);
+    background-color: var(--cor-categoria-alta);
+}
+
+.category-list__category--Media {
+    color: var(--contrast-light-color);
+    background-color: var(--cor-categoria-media);
+}

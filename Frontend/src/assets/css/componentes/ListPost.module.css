@@ -1,0 +1,25 @@
+.toggleButton {
+  border-radius: 3rem;
+  width: 100px;
+  height: 40px;
+  background-color: rgb(253, 141, 77);
+  /* border: 2px solid rgb(255, 0, 0); */
+  border: none;
+  transition: 0.5s;
+}
+
+.toggleButton.active {
+  /* background-color: rgb(9, 255, 0); */
+  background-color: rgb(57, 204, 57);
+  border: none;
+}
+.ulMain {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+
+.p {
+  word-wrap: break-word;
+}

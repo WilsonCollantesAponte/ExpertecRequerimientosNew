@@ -1,0 +1,42 @@
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.mainDiv {
+  flex-direction: column;
+  padding-top: 3rem;
+  display: inline-flex;
+}
+
+.input {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 400px;
+}
+
+.button {
+  display: block;
+  background-color: var(--primary-color);
+  border-radius: 7px;
+  width: 100%;
+  margin-top: 1rem;
+  max-width: 20rem;
+  padding: 1.125rem;
+  box-sizing: border-box;
+  color: var(--contrast-light-color);
+  font-size: var(--font-size-button);
+  align-self: center;
+  text-align: center;
+}
+
+.radio {
+  display: inline-block;
+}
+
+.typeUsers {
+  /* background-color: rebeccapurple; */
+  display: grid;
+  margin-top: 0.8rem;
+  grid-template-columns: repeat(2, 1fr);
+}

@@ -1,0 +1,17 @@
+.div2 {
+  /* background-color: rebeccapurple; */
+  display: flex;
+  flex-direction: column;
+}
+
+.p {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 17px;
+  word-wrap: break-word;
+  display: block;
+  /* background-color: rebeccapurple; */
+}
